@@ -1,16 +1,18 @@
 # Combine Data in Streaming Mode
 
-## Feature Description
-
-This example demonstrates how to use an Edge Function to fetch and merge multiple resources, then serve the combined data to the client in streaming mode.
+In this example, an Edge Function fetches and merges multiple resources, then serves the combined stream to a client. This demonstrates how to use Edge Functions to aggregate data from multiple sources and deliver it efficiently in a streaming fashion.
 
 ## How It Works
 
-1. Define an array containing multiple resource URLs.
+1. Define an array of resource URLs to be fetched.
 2. Use the `fetch` function to request all resources in parallel.
 3. Create a `TransformStream` to handle the data stream.
 4. Use a custom `combine` function to sequentially write all resource response bodies to the writable end of the `TransformStream`.
 5. Return a new `Response` object containing the readable end of the `TransformStream`.
+
+## Sample Preview
+
+![Combine Data in Streaming Mode Preview](../image/Combine-Data-in-Streaming-Mode.avif)
 
 ## Use Cases
 
@@ -24,6 +26,9 @@ This technique is particularly useful in the following situations:
 
 - Ensure all resource URLs are accessible, otherwise requests may fail.
 - Consider adding error handling mechanisms to deal with situations where individual resource requests fail.
-- Adjust the URLs in the `RESOURCE_URLS` array according to your actual requirements.
+- Adjust the `RESOURCE_URLS` array according to your actual requirements.
+- Be mindful of the total response size and processing time when combining multiple resources.
 
 By using this method, you can effectively combine multiple data sources and provide data to the client in a streaming manner, thereby improving the performance and responsiveness of your application.
+
+For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-mergingresourcesandrespondinginstreamingmode).

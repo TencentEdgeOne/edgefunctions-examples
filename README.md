@@ -18,7 +18,7 @@
 ---
 
 <p align="center">
-  <kbd><img src="image/edgeone functions cover.png" alt="EdgeOne Edge Functions Mockup" title="EdgeOne Edge Functions"/></kbd>
+  <kbd><img src="image/edgeone-functions-cover.png" alt="EdgeOne Edge Functions Mockup" title="EdgeOne Edge Functions"/></kbd>
 </p>
 
 
@@ -52,7 +52,7 @@
 
 ## Get Started
 
-Detailed instructions can be found in ourt  [Getting Started](https://edgeone.ai/document/53373?product=edgedeveloperplatform).
+Detailed instructions can be found in our  [Getting Started](https://edgeone.ai/document/53373?product=edgedeveloperplatform).
 
 ## Examples
 
@@ -61,15 +61,17 @@ This repository contains various examples demonstrating the capabilities of Edge
 Some of the examples include:
 
 - [Combine Data in Streaming Mode](./combine-data-streaming)
-- [API Proxy](./api-proxy)
-- [Image Manipulation](./image-manipulation)
-- [Authentication Middleware](./auth-middleware)
+- [Adaptive WebP Images](./adaptive-webp)
+- [Caching POST Requests](./cache-post-requests)
+- [Obtain Client Geo Info](./client-geo-info)
 
 Feel free to explore these examples and use them as a starting point for your own Edge Functions!
 
+For more examples, see [Examples](https://edgeone.ai/developer/examples).
+
 ## Documentation
 
-Detailed documentation can be found in our [official documentation](https://edgeone.ai/document/53372).
+Detailed documentation can be found in our [Documentation](https://edgeone.ai/document/53372).
 
 ## Contribute
 
