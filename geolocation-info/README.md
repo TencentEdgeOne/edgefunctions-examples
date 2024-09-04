@@ -1,4 +1,4 @@
-# Obtain Client Geo Info
+# Geolocation Info | [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-obtainingclientipaddress)
 
 This example demonstrates how to use an Edge Function to obtain and return client geo-location data. This information can be valuable for various purposes such as content localization, analytics, or security measures.
 
@@ -30,5 +30,3 @@ This technique is particularly useful in the following situations:
 - Use this information responsibly and transparently.
 
 By leveraging client geo-location data at the edge, you can create more personalized and efficient web applications without the need for additional client-side scripts or server-side processing.
-
-For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-obtainingclientipaddress).

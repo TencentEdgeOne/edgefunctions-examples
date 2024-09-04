@@ -15,11 +15,11 @@ In this example, an SHA-256 signature is calculated for the request body of a PO
 
 - The resource is not found in the cache.
 
-![cache-post-request-nocache Preview](../readme-images/cache-post-request-nocache.avif)
+![caching-post-requests-nocache Preview](../readme-images/caching-post-requests-nocache.avif)
 
 - The resource is found in the cache.
 
-![cache-post-request-cache Preview](../readme-images/cache-post-request-cache.avif)
+![caching-post-requests-cache Preview](../readme-images/caching-post-requests-cache.avif)
 
 ## Use Cases
 

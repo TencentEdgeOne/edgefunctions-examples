@@ -1,4 +1,4 @@
-# 获取客户端地理信息
+# 地理信息 | [EdgeOne 开发者示例](https://edgeone.ai/developer/examples/hub-obtainingclientipaddress)
 
 本示例演示了如何使用 Edge Function 获取并返回客户端的地理位置数据。这些信息对于内容本地化、分析或安全措施等多种用途都非常有价值。
 
@@ -30,5 +30,3 @@
 - 负责任和透明地使用这些信息。
 
 通过在边缘利用客户端地理位置数据，您可以创建更加个性化和高效的 Web 应用程序，而无需额外的客户端脚本或服务器端处理。
-
-有关更多详细信息和完整实现，请参阅 [EdgeOne 开发者示例](https://edgeone.ai/developer/examples/hub-obtainingclientipaddress)。

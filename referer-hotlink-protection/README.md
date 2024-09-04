@@ -1,4 +1,4 @@
-# Referer-based Hotlink Protection
+# Referer Hotlink Protection
 
 This example demonstrates how to use an Edge Function to implement referer-based hotlink protection. This technique helps protect your website's resources from unauthorized use by other websites.
 
@@ -14,11 +14,11 @@ This example demonstrates how to use an Edge Function to implement referer-based
 
 If the referer is incorrect, access is denied.
 
-![hot-link-protection-denied Preview](../readme-images/hot-link-protection-denied.avif)
+![referer-hotlink-protection-denied Preview](../readme-images/referer-hotlink-protection-denied.avif)
 
 If the referer is correct, access is granted.
 
-![hot-link-protection-granted Preview](../readme-images/hot-link-protection-granted.avif)
+![referer-hotlink-protection-granted Preview](../readme-images/referer-hotlink-protection-granted.avif)
 
 ## Use Cases
 

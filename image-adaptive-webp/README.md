@@ -1,4 +1,4 @@
-# Adaptive WebP Images
+# Image Adaptive WebP 
 
 This example demonstrates how to use Edge Functions to dynamically serve WebP images to browsers that support this format, while falling back to original image formats for browsers that don't support WebP. This approach can significantly reduce image file sizes and improve page load times.
 

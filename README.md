@@ -73,4 +73,12 @@ For more examples, see [Examples](https://edgeone.ai/developer/examples).
 
 Detailed documentation can be found in our [Documentation](https://edgeone.ai/document/53372).
 
+## Contribute
+
+We welcome all forms of contributions! Please check our Contribution Guidelines for more information.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 ---

@@ -1,4 +1,4 @@
-# Alter Response Header
+# Alter Response Headers
 
 This example demonstrates how to use an Edge Function to add, delete, or modify response headers. This technique allows you to customize the HTTP headers sent back to clients, which can be useful for various purposes such as security enhancement, caching control, or adding custom information.
 
