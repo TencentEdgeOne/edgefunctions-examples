@@ -1,5 +1,13 @@
 # A/B 测试 | [EdgeOne 开发者示例](https://edgeone.ai/developer/examples/hub-performingana-btest)
 
+<p align="center">
+  <a href="#工作原理">工作原理</a> •
+  <a href="#示例预览">示例预览</a> •
+  <a href="#使用场景">使用场景</a> •
+  <a href="#注意事项">注意事项</a> •
+  <a href="https://edgeone.ai/developer/examples/hub-performingana-btest">开发者示例</a>
+</p>
+
 本示例演示了如何使用 Edge Function 执行 A/B 测试，通过使用 cookie 存储会话信息并向用户提供不同版本的内容。
 
 ## 工作原理
