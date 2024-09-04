@@ -1,4 +1,4 @@
-# 流式模式下合并数据
+# 流式模式下合并数据 | [EdgeOne 流式数据合并示例](https://edgeone.ai/developer/examples/hub-mergingresourcesandrespondinginstreamingmode)
 
 在本示例中,Edge Function 获取并合并多个资源,然后以流式方式将合并后的数据提供给客户端。这演示了如何使用 Edge Functions 从多个源聚合数据,并以流式方式高效地传递数据。
 
