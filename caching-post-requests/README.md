@@ -1,5 +1,7 @@
 # Caching POST Requests
 
+<a href="https://edgeone.ai/developer/examples/caching-post-requests" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
+
 In this example, an SHA-256 signature is calculated for the request body of a POST request and used as a part of the cache key, and the Cache API is called to cache the response content. If the content is already stored in the cache, the cached content is sent to the client. Otherwise, the Fetch API is called to initiate a subrequest to fetch a remote resource. This example demonstrates how to use an Edge Function to cache POST requests.
 
 ## How It Works
@@ -38,5 +40,3 @@ This technique is particularly useful in the following situations:
 - Consider implementing cache invalidation mechanisms for when data does change.
 
 By using this method, you can significantly reduce the load on your origin servers and improve response times for your users, especially for complex queries that are computationally expensive but don't change frequently.
-
-For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/caching-post-requests).

@@ -1,5 +1,7 @@
 # 请求重定向
 
+<a href="https://edgeone.ai/developer/examples/hub-requestredirct" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
+
 本示例演示了如何使用 Edge Function 实现请求重定向,向客户端返回 302 响应。这是一种常用的技术,用于 URL 缩短、维护旧 URL 的向后兼容性,或临时移动内容。
 
 ## 工作原理
@@ -29,5 +31,3 @@
 - 监控重定向链,避免过多的重定向影响用户体验。
 
 通过在边缘实现请求重定向,您可以高效地管理流量并通过快速将用户引导到正确的资源来改善用户体验。
-
-有关更多详细信息和完整实现,请参阅 [EdgeOne 开发者示例](https://edgeone.ai/developer/examples/hub-requestredirct)。

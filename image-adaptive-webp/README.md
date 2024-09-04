@@ -1,5 +1,7 @@
 # Image Adaptive WebP 
 
+<a href="https://edgeone.ai/developer/examples/hub-imageadaptivewebP" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
+
 This example demonstrates how to use Edge Functions to dynamically serve WebP images to browsers that support this format, while falling back to original image formats for browsers that don't support WebP. This approach can significantly reduce image file sizes and improve page load times.
 
 ## How It Works
@@ -28,5 +30,3 @@ This technique is particularly useful in the following situations:
 - Monitor the impact on your origin server's performance when generating WebP images on-the-fly.
 
 By implementing adaptive WebP serving, you can significantly reduce the amount of data transferred to clients that support WebP, leading to faster page loads and improved user experience, while still maintaining compatibility with all browsers.
-
-For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-imageadaptivewebP).

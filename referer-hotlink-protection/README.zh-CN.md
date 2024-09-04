@@ -1,5 +1,7 @@
 # 基于 Referer 的防盗链保护
 
+<a href="https://edgeone.ai/developer/examples/hub-customrefererantileeching" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
+
 本示例演示了如何使用 Edge Function 实现基于 Referer 的防盗链保护。这种技术有助于保护您网站的资源不被其他网站未经授权使用。
 
 ## 工作原理
@@ -37,5 +39,3 @@
 - 定期审查和更新您允许的 referer 模式，以适应您网站结构的变化。
 
 通过在边缘实现基于 Referer 的防盗链保护，您可以有效地控制对资源的访问，而无需修改源服务器或使用服务器端脚本。
-
-有关更多详细信息和完整实现，请参阅 [EdgeOne 开发者示例](https://edgeone.ai/developer/examples/hub-customrefererantileeching)。

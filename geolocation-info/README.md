@@ -1,4 +1,6 @@
-# Geolocation Info | [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-obtainingclientipaddress)
+# Geolocation Info
+
+<a href="https://edgeone.ai/developer/examples/hub-obtainingclientipaddress" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
 
 This example demonstrates how to use an Edge Function to obtain and return client geo-location data. This information can be valuable for various purposes such as content localization, analytics, or security measures.
 

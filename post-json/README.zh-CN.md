@@ -1,5 +1,7 @@
 # 返回 JSON
 
+<a href="https://edgeone.ai/developer/examples/hub-returningjson" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
+
 本示例演示了如何使用 Edge Function 生成并返回 JSON 对象。这种技术通常用于创建轻量级 API 或向客户端返回结构化数据。
 
 ## 工作原理
@@ -31,5 +33,3 @@
 - 实现错误处理，以应对 JSON 生成可能失败的情况。
 
 通过直接从 Edge Function 返回 JSON，您可以创建快速、响应迅速的 API，而无需传统的后端服务器。
-
-有关更多详细信息和完整实现，请参阅 [EdgeOne 开发者示例](https://edgeone.ai/developer/examples/hub-returningjson)。

@@ -1,5 +1,7 @@
 # Post JSON
 
+<a href="https://edgeone.ai/developer/examples/hub-returningjson" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
+
 This example demonstrates how to use an Edge Function to generate and return a JSON object. This technique is commonly used for creating lightweight APIs or returning structured data to clients.
 
 ## How It Works
@@ -31,5 +33,3 @@ This technique is particularly useful in the following situations:
 - Implement error handling for cases where JSON generation might fail.
 
 By returning JSON directly from an Edge Function, you can create fast, responsive APIs without the need for a traditional backend server.
-
-For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-returningjson).

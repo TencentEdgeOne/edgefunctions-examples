@@ -1,4 +1,6 @@
-# 修改响应头 | [EdgeOne 响应头修改示例](https://edgeone.ai/developer/examples/hub-modifyingaresponseheader)
+# 修改响应头
+
+<a href="https://edgeone.ai/developer/examples/hub-modifyingaresponseheader" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
 本示例演示了如何使用 Edge Function 来添加、删除或修改响应头。这种技术允许您自定义发送回客户端的 HTTP 头，这对于各种目的（如增强安全性、控制缓存或添加自定义信息）非常有用。
 

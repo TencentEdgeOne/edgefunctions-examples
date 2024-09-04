@@ -1,5 +1,7 @@
 # Request Redirect
 
+<a href="https://edgeone.ai/developer/examples/hub-requestredirct" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
+
 This example demonstrates how to use an Edge Function to implement request redirection, returning a 302 response to the client. This is a common technique used for URL shortening, maintaining backwards compatibility with old URLs, or temporarily moving content.
 
 ## How It Works
@@ -29,5 +31,3 @@ This technique is particularly useful in the following situations:
 - Monitor redirect chains to avoid excessive redirects that could impact user experience.
 
 By implementing request redirection at the edge, you can efficiently manage traffic flow and improve user experience by quickly directing users to the correct resources.
-
-For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-requestredirct).

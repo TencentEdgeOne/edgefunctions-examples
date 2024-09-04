@@ -1,5 +1,7 @@
 # Combine Data in Streaming Mode
 
+<a href="https://edgeone.ai/developer/examples/hub-mergingresourcesandrespondinginstreamingmode" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
+
 In this example, an Edge Function fetches and merges multiple resources, then serves the combined stream to a client. This demonstrates how to use Edge Functions to aggregate data from multiple sources and deliver it efficiently in a streaming fashion.
 
 ## How It Works
@@ -30,5 +32,3 @@ This technique is particularly useful in the following situations:
 - Be mindful of the total response size and processing time when combining multiple resources.
 
 By using this method, you can effectively combine multiple data sources and provide data to the client in a streaming manner, thereby improving the performance and responsiveness of your application.
-
-For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-mergingresourcesandrespondinginstreamingmode).

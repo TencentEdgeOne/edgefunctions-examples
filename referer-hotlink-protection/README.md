@@ -1,5 +1,7 @@
 # Referer Hotlink Protection
 
+<a href="https://edgeone.ai/developer/examples/hub-customrefererantileeching" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
+
 This example demonstrates how to use an Edge Function to implement referer-based hotlink protection. This technique helps protect your website's resources from unauthorized use by other websites.
 
 ## How It Works
@@ -37,5 +39,3 @@ This technique is particularly useful in the following situations:
 - Regularly review and update your allowed referer patterns to accommodate changes in your website structure.
 
 By implementing referer-based hotlink protection at the edge, you can efficiently control access to your resources without modifying your origin server or using server-side scripts.
-
-For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-customrefererantileeching).

@@ -1,5 +1,7 @@
 # 自适应 WebP 图像
 
+<a href="https://edgeone.ai/developer/examples/hub-imageadaptivewebP" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
+
 本示例演示了如何使用 Edge Functions 动态地向支持 WebP 格式的浏览器提供 WebP 图像,同时为不支持 WebP 的浏览器提供原始图像格式。这种方法可以显著减少图像文件大小并提高页面加载速度。
 
 ## 工作原理
@@ -28,5 +30,3 @@
 - 监控实时生成 WebP 图像对源服务器性能的影响。
 
 通过实施自适应 WebP 服务,您可以显著减少传输到支持 WebP 的客户端的数据量,从而实现更快的页面加载和改善用户体验,同时仍然保持与所有浏览器的兼容性。
-
-有关更多详细信息和完整实现,请参阅 [EdgeOne 开发者示例](https://edgeone.ai/developer/examples/hub-imageadaptivewebP)。

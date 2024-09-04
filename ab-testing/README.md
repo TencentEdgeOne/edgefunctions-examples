@@ -1,4 +1,6 @@
-# A/B Testing | [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-performingana-btest)
+# A/B Testing 
+
+<a href="https://edgeone.ai/developer/examples/hub-performingana-btest" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
 
 This example demonstrates how to use an Edge Function to perform A/B testing by using cookies to store session information and serve different versions of content to users.
 
@@ -33,5 +35,3 @@ This technique is particularly useful in the following situations:
 - Be mindful of potential biases in your A/B test setup and results.
 
 By implementing A/B testing at the edge, you can quickly and efficiently test different versions of your content without modifying your origin server or using client-side JavaScript.
-
-For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-performingana-btest).

@@ -1,5 +1,7 @@
 # Alter Response Headers
 
+<a href="https://edgeone.ai/developer/examples/hub-modifyingaresponseheader" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
+
 This example demonstrates how to use an Edge Function to add, delete, or modify response headers. This technique allows you to customize the HTTP headers sent back to clients, which can be useful for various purposes such as security enhancement, caching control, or adding custom information.
 
 ## How It Works
@@ -34,4 +36,3 @@ This technique is particularly useful in the following situations:
 
 By modifying response headers at the edge, you can enhance security, improve caching strategies, and provide custom information to clients without modifying your origin server's configuration.
 
-For more details and the full implementation, please refer to the [EdgeOne Developer Examples](https://edgeone.ai/developer/examples/hub-modifyingaresponseheader).
