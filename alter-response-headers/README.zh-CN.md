@@ -14,7 +14,7 @@
 
 ## 示例预览
 
-![Modify Response Header Preview](../image/Modify-Response-Header.avif)
+![alter-response-headers Preview](../readme-images/alter-response-headers.avif)
 
 ## 使用场景
 

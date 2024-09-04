@@ -12,7 +12,7 @@ In this example, an Edge Function fetches and merges multiple resources, then se
 
 ## Sample Preview
 
-![Combine Data in Streaming Mode Preview](../image/Combine-Data-in-Streaming-Mode.avif)
+![aggregate-requests Preview](../readme-images/aggregate-requests.avif)
 
 ## Use Cases
 

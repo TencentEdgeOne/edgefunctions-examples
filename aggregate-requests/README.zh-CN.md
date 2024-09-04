@@ -12,7 +12,7 @@
 
 ## 示例预览
 
-![Combine Data in Streaming Mode Preview](../image/Combine-Data-in-Streaming-Mode.avif)
+![aggregate-requests Preview](../readme-images/aggregate-requests.avif)
 
 ## 使用场景
 

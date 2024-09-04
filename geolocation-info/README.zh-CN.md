@@ -11,7 +11,7 @@
 
 ## 示例预览
 
-![client-geo-info Preview](../image/client-geo-info.avif)
+![geolocation-info Preview](../readme-images/geolocation-info.avif)
 
 ## 使用场景
 

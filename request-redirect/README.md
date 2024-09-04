@@ -10,7 +10,7 @@ This example demonstrates how to use an Edge Function to implement request redir
 
 ## Sample Preview
 
-![Request-Redirect Preview](../image/Request-Redirect.avif)
+![request-redirect Preview](../readme-images/request-redirect.avif)
 
 ## Use Cases
 

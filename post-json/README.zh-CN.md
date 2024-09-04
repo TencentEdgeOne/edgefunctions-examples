@@ -12,7 +12,7 @@
 
 ## 示例预览
 
-![Return-JSON Preview](../image/Return-JSON.avif)
+![post-json Preview](../readme-images/post-json.avif)
 
 ## 使用场景
 

@@ -14,11 +14,11 @@
 
 如果引用不正确，访问将被拒绝。
 
-![Referer-based-Hotlink-Protection-denied Preview](../image/Referer-based-Hotlink-Protection-denied.avif)
+![hot-link-protection-denied Preview](../readme-images/hot-link-protection-denied.avif)
 
 如果引用正确，则授予访问权限。
 
-![Referer-based-Hotlink-Protection-granted Preview](../image/Referer-based-Hotlink-Protection-granted.avif)
+![hot-link-protection-granted Preview](../readme-images/hot-link-protection-granted.avif)
 
 ## 使用场景
 

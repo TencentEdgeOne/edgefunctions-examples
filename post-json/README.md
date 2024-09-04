@@ -12,7 +12,7 @@ This example demonstrates how to use an Edge Function to generate and return a J
 
 ## Sample Preview
 
-![Return-JSON Preview](../image/Return-JSON.avif)
+![post-json Preview](../readme-images/post-json.avif)
 
 ## Use Cases
 

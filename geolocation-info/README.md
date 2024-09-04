@@ -11,7 +11,7 @@ This example demonstrates how to use an Edge Function to obtain and return clien
 
 ## Sample Preview
 
-![client-geo-info Preview](../image/client-geo-info.avif)
+![geolocation-info Preview](../readme-images/geolocation-info.avif)
 
 ## Use Cases
 

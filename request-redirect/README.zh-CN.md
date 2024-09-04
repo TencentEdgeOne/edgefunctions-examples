@@ -10,7 +10,7 @@
 
 ## 示例预览
 
-![Request-Redirect Preview](../image/Request-Redirect.avif)
+![request-redirect Preview](../readme-images/request-redirect.avif)
 
 ## 使用场景
 

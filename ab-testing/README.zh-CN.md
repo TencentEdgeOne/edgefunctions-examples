@@ -14,7 +14,7 @@
 
 ## 示例预览
 
-![A/B Test Preview](../image/ab-test.png)
+![ab-testing Preview](../readme-images/ab-testing.png)
 
 ## 使用场景
 

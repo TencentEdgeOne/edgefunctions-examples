@@ -14,11 +14,11 @@ This example demonstrates how to use an Edge Function to implement referer-based
 
 If the referer is incorrect, access is denied.
 
-![Referer-based-Hotlink-Protection-denied Preview](../image/Referer-based-Hotlink-Protection-denied.avif)
+![hot-link-protection-denied Preview](../readme-images/hot-link-protection-denied.avif)
 
 If the referer is correct, access is granted.
 
-![Referer-based-Hotlink-Protection-granted Preview](../image/Referer-based-Hotlink-Protection-granted.avif)
+![hot-link-protection-granted Preview](../readme-images/hot-link-protection-granted.avif)
 
 ## Use Cases
 

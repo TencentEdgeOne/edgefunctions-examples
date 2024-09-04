@@ -15,11 +15,11 @@
 
 - 缓存中未找到该资源。
 
-![cache-post-requests-nocache Preview](../image/cache-post-requests-nocache.avif)
+![cache-post-request-nocache Preview](../readme-images/cache-post-request-nocache.avif)
 
 - 在缓存中找到资源。
 
-![cache-post-requests-cache Preview](../image/cache-post-requests-cache.avif)
+![cache-post-request-cache Preview](../readme-images/cache-post-request-cache.avif)
 
 ## 使用场景
 

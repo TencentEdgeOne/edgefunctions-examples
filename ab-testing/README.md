@@ -14,7 +14,7 @@ This example demonstrates how to use an Edge Function to perform A/B testing by 
 
 ## Sample Preview
 
-![A/B Test Preview](../image/ab-test.png)
+![ab-testing Preview](../readme-images/ab-testing.png)
 
 ## Use Cases
 
