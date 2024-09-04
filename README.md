@@ -18,7 +18,7 @@
 ---
 
 <p align="center">
-  <kbd><img src="image/edgeone-functions-cover.png" alt="EdgeOne Edge Functions Mockup" title="EdgeOne Edge Functions"/></kbd>
+  <kbd><img src="readme-images/edgeone-functions-cover.png" alt="EdgeOne Edge Functions Mockup" title="EdgeOne Edge Functions"/></kbd>
 </p>
 
 
@@ -60,10 +60,10 @@ This repository contains various examples demonstrating the capabilities of Edge
 
 Some of the examples include:
 
-- [Combine Data in Streaming Mode](./combine-data-streaming)
+- [Aggregate Requests](./aggregate-requests)
 - [Adaptive WebP Images](./adaptive-webp)
-- [Caching POST Requests](./cache-post-requests)
-- [Obtain Client Geo Info](./client-geo-info)
+- [Caching POST Requests](./cache-post-request)
+- [Obtain Client Geo Info](./geolocation-info)
 
 Feel free to explore these examples and use them as a starting point for your own Edge Functions!
 

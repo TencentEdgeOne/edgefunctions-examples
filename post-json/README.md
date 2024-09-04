@@ -1,4 +1,4 @@
-# Return JSON
+# Post JSON
 
 This example demonstrates how to use an Edge Function to generate and return a JSON object. This technique is commonly used for creating lightweight APIs or returning structured data to clients.
 
