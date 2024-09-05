@@ -2,7 +2,7 @@
 
 <a href="https://edgeone.ai/developer/examples/hub-imageadaptivewebP" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
-本示例演示了如何使用 Edge Functions 动态地向支持 WebP 格式的浏览器提供 WebP 图像,同时为不支持 WebP 的浏览器提供原始图像格式。这种方法可以显著减少图像文件大小并提高页面加载速度。
+本示例演示了如何使用 Edge Functions 动态地向支持 WebP 格式的浏览器提供 WebP 图像,同时为不支持 WebP 的浏览器提供原始图像格式。这种方法可以显著减少图像文件大小并提高页面加载速度。若您的 Web 应用展示了大量的 PNG，JPEG 格式图片，期望在边缘自动优化图片，减少流量带宽成本，可使用边缘函数实现平滑升级， 把 PNG，JPEG 格式图片自动转换为 WebP 格式，并且业务代码 0 改动。
 
 ## 工作原理
 
@@ -24,9 +24,8 @@
 
 ## 注意事项
 
-- 确保您的源服务器上有图像的 WebP 版本可用。
-- 考虑为不支持 WebP 的浏览器实现回退机制。
-- 注意维护 WebP 和原始版本图像所需的额外存储空间。
-- 监控实时生成 WebP 图像对源服务器性能的影响。
+- 该示例仅在源文件的响应头 Content-Type 指定的 MIME 类型为图像（image/*）时,才能正常执行转换功能。
+- 该示例暂不支持转换 SVG 格式图片。
+- 建议在边缘函数触发规则配置中添加文件后缀 .png、.jpeg、.jpg 等图片后缀,以确保只对适当的文件类型执行转换。
 
 通过实施自适应 WebP 服务,您可以显著减少传输到支持 WebP 的客户端的数据量,从而实现更快的页面加载和改善用户体验,同时仍然保持与所有浏览器的兼容性。

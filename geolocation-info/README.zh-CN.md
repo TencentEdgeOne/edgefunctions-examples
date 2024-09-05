@@ -4,6 +4,23 @@
 
 本示例演示了如何使用 Edge Function 获取并返回客户端的地理位置数据。这些信息对于内容本地化、分析或安全措施等多种用途都非常有价值。
 
+## 可获取的地理位置属性 (GeoProperties)
+
+Edge Function 可以获取以下描述客户请求位置信息的属性：
+
+| 属性名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| asn | number | ASN（自治系统编号） | 132203 |
+| countryName | string | 国家名 | Singapore |
+| countryCodeAlpha2 | string | 国家的 ISO-3611 alpha2 代码 | SG |
+| countryCodeAlpha3 | string | 国家的 ISO-3611 alpha3 代码 | SGP |
+| countryCodeNumeric | string | 国家的 ISO-3611 numeric 代码 | 702 |
+| regionName | string | 区域名 | - |
+| regionCode | string | 区域代码 | AA-AA |
+| cityName | string | 城市名 | singapore |
+| latitude | number | 纬度 | 1.29027 |
+| longitude | number | 经度 | 103.851959 |
+
 ## 工作原理
 
 1. 创建一个 `handleRequest` 函数，该函数：

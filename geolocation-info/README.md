@@ -4,6 +4,23 @@
 
 This example demonstrates how to use an Edge Function to obtain and return client geo-location data. This information can be valuable for various purposes such as content localization, analytics, or security measures.
 
+## Available Geolocation Properties (GeoProperties)
+
+The Edge Function can access the following properties describing the client request's location information:
+
+| Property Name | Type | Description | Example Value |
+|---------------|------|-------------|---------------|
+| asn | number | Autonomous System Number (ASN) | 132203 |
+| countryName | string | Country name | Singapore |
+| countryCodeAlpha2 | string | ISO-3611 alpha2 country code | SG |
+| countryCodeAlpha3 | string | ISO-3611 alpha3 country code | SGP |
+| countryCodeNumeric | string | ISO-3611 numeric country code | 702 |
+| regionName | string | Region name | - |
+| regionCode | string | Region code | AA-AA |
+| cityName | string | City name | singapore |
+| latitude | number | Latitude | 1.29027 |
+| longitude | number | Longitude | 103.851959 |
+
 ## How It Works
 
 1. Create a `handleRequest` function that:
