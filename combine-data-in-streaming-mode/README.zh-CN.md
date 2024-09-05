@@ -14,7 +14,7 @@
 
 ## 示例预览
 
-![combine-data-in-streaming-mode Preview](../readme-images/combine-data-in-streaming-mode.avif)
+![combine-data-in-streaming-mode Preview](../assets/images/combine-data-in-streaming-mode.avif)
 
 ## 使用场景
 

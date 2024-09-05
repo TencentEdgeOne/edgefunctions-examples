@@ -17,11 +17,11 @@
 
 - 缓存中未找到该资源。
 
-![caching-post-requests-nocache Preview](../readme-images/caching-post-requests-nocache.avif)
+![caching-post-requests-nocache Preview](../assets/images/caching-post-requests-nocache.avif)
 
 - 在缓存中找到资源。
 
-![caching-post-requests-cache Preview](../readme-images/caching-post-requests-cache.avif)
+![caching-post-requests-cache Preview](../assets/images/caching-post-requests-cache.avif)
 
 ## 使用场景
 

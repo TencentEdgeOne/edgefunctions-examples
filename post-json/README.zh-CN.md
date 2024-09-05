@@ -14,7 +14,7 @@
 
 ## 示例预览
 
-![post-json Preview](../readme-images/post-json.avif)
+![post-json Preview](../assets/images/post-json.avif)
 
 ## 使用场景
 

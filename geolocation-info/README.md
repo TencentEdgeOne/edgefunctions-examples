@@ -30,7 +30,7 @@ The Edge Function can access the following properties describing the client requ
 
 ## Sample Preview
 
-![geolocation-info Preview](../readme-images/geolocation-info.avif)
+![geolocation-info Preview](../assets/images/geolocation-info.avif)
 
 ## Use Cases
 

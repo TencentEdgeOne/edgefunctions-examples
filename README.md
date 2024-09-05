@@ -18,7 +18,7 @@
 ---
 
 <p align="center">
-  <kbd><img src="readme-images/edgeone-functions-cover.png" alt="EdgeOne Edge Functions Mockup" title="EdgeOne Edge Functions"/></kbd>
+  <kbd><img src="assets/images/edgeone-functions-cover.png" alt="EdgeOne Edge Functions Mockup" title="EdgeOne Edge Functions"/></kbd>
 </p>
 
 

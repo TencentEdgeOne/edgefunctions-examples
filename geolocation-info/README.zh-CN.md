@@ -30,7 +30,7 @@ Edge Function 可以获取以下描述客户请求位置信息的属性：
 
 ## 示例预览
 
-![geolocation-info Preview](../readme-images/geolocation-info.avif)
+![geolocation-info Preview](../assets/images/geolocation-info.avif)
 
 ## 使用场景
 

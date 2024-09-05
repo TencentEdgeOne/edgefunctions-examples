@@ -12,7 +12,7 @@
 
 ## 示例预览
 
-![request-redirect Preview](../readme-images/request-redirect.avif)
+![request-redirect Preview](../assets/images/request-redirect.avif)
 
 ## 使用场景
 

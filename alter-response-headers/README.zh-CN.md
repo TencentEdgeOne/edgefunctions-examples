@@ -16,7 +16,7 @@
 
 ## 示例预览
 
-![alter-response-headers Preview](../readme-images/alter-response-headers.avif)
+![alter-response-headers Preview](../assets/images/alter-response-headers.avif)
 
 ## 使用场景
 

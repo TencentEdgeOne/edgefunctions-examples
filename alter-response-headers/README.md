@@ -16,7 +16,7 @@ This example demonstrates how to use an Edge Function to add, delete, or modify 
 
 ## Sample Preview
 
-![alter-response-headers Preview](../readme-images/alter-response-headers.avif)
+![alter-response-headers Preview](../assets/images/alter-response-headers.avif)
 
 ## Use Cases
 
