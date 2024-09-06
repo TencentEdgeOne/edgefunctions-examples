@@ -24,13 +24,13 @@ async function handleRequest(request) {
   // If the Cookie value is A test, Return index-a.html.
   if (cookieValue === VALUE_A) {
     urlInfo.pathname = `/${BASE_PATH}/${cookieValue}`;
-    return fetch(urlInfo.toString());
+    return fetch(new URL(urlInfo.toString()).href);
   }
 
   // If the Cookie value is B test, Return index-b.html.
   if (cookieValue === VALUE_B) {
     urlInfo.pathname = `/${BASE_PATH}/${cookieValue}`;
-    return fetch(urlInfo.toString());
+    return fetch(new URL(urlInfo.toString()).href);
   }
 
   // If the Cookie information does not exist, randomly grant the current request to A or B test.
@@ -38,7 +38,7 @@ async function handleRequest(request) {
 
   urlInfo.pathname = `/${BASE_PATH}/${testValue}`;
 
-  const response = await fetch(urlInfo.toString());
+  const response = await fetch(new URL(urlInfo.toString()).href);
 
   cookies.set(COOKIE_NAME, testValue, { path: '/', max_age: 60 });
   response.headers.set('Set-Cookie', getSetCookie(cookies.get(COOKIE_NAME)));
