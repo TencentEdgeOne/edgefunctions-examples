@@ -70,7 +70,7 @@ This repository contains various examples demonstrating the capabilities of Edge
 
 Some of the classic examples include:
 
-- [M3U8 Rewrite and Authentication](./m3u8-rewrite-auth): Demonstrates how to rewrite M3U8 files and implement authentication for streaming content.
+- [M3U8 Rewrite and Authentication](./m3u8-rewrite-authentication): Demonstrates how to rewrite M3U8 files and implement authentication for streaming content.
 - [Geolocation-based Blocking](./geolocation-based-blocking): Shows how to implement country-level access restrictions based on geographical location.
 - [URL Authentication](./url-authentication): Illustrates how to implement URL authentication using timestamps and MD5 hashing.
 - [Adaptive WebP Images](./adaptive-webp): Showcases how to dynamically serve WebP images to supported browsers for improved performance.

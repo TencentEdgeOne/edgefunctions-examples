@@ -70,7 +70,7 @@
 
 一些经典示例包括:
 
-- [M3U8 重写和认证](./m3u8-rewrite-auth): 展示如何重写 M3U8 文件并为流媒体内容实现认证。
+- [M3U8 重写和认证](./m3u8-rewrite-authentication): 展示如何重写 M3U8 文件并为流媒体内容实现认证。
 - [基于地理位置的封禁](./geolocation-based-blocking): 展示如何基于地理位置实现国家级别的访问限制。
 - [URL 认证](./url-authentication): 说明如何使用时间戳和 MD5 哈希实现 URL 认证。
 - [自适应 WebP 图像](./adaptive-webp): 展示如何为支持的浏览器动态提供 WebP 图像以提高性能。
