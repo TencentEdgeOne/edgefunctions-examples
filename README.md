@@ -1,7 +1,7 @@
 <div align="left">
   Language:
   <a title="English" href="#readme">English</a>
-  <a title="中文" href="./README.zh-CN.md">中文</a>
+  <a title="中文" href="./README_zh-CN.md">中文</a>
 </div>
 
 ---
@@ -68,12 +68,12 @@ Detailed instructions can be found in our  [Getting Started](https://edgeone.ai/
 
 This repository contains various examples demonstrating the capabilities of EdgeOne Edge Functions. Each example is contained in its own directory with a README explaining its purpose and usage.
 
-Some of the examples include:
+Some of the classic examples include:
 
-- [Aggregate Requests](./aggregate-requests)
-- [Adaptive WebP Images](./adaptive-webp)
-- [Caching POST Requests](./cache-post-request)
-- [Obtain Client Geo Info](./geolocation-info)
+- [M3U8 Rewrite and Authentication](./m3u8-rewrite-auth): Demonstrates how to rewrite M3U8 files and implement authentication for streaming content.
+- [Geolocation-based Blocking](./geolocation-based-blocking): Shows how to implement country-level access restrictions based on geographical location.
+- [URL Authentication](./url-authentication): Illustrates how to implement URL authentication using timestamps and MD5 hashing.
+- [Adaptive WebP Images](./adaptive-webp): Showcases how to dynamically serve WebP images to supported browsers for improved performance.
 
 Feel free to explore these examples and use them as a starting point for your own Edge Functions!
 

@@ -1,5 +1,5 @@
 <div align="left">
-  Language:
+  语言:
   <a title="English" href="./README.md">English</a>
   <a title="中文" href="#readme-cn">中文</a>
 </div>
@@ -66,18 +66,18 @@
 
 ## 示例
 
-本仓库包含多个示例，展示了 EdgeOne 边缘函数的功能。每个示例都在自己的目录中，并附有说明其用途和使用方法的 README。
+本仓库包含多个示例,展示了 EdgeOne 边缘函数的功能。每个示例都在自己的目录中,并附有说明其用途和使用方法的 README。
 
-一些示例包括：
+一些经典示例包括:
 
-- [聚合请求](./aggregate-requests)
-- [自适应 WebP 图像](./adaptive-webp)
-- [缓存 POST 请求](./cache-post-request)
-- [获取客户端地理信息](./geolocation-info)
+- [M3U8 重写和认证](./m3u8-rewrite-auth): 展示如何重写 M3U8 文件并为流媒体内容实现认证。
+- [基于地理位置的封禁](./geolocation-based-blocking): 展示如何基于地理位置实现国家级别的访问限制。
+- [URL 认证](./url-authentication): 说明如何使用时间戳和 MD5 哈希实现 URL 认证。
+- [自适应 WebP 图像](./adaptive-webp): 展示如何为支持的浏览器动态提供 WebP 图像以提高性能。
 
-欢迎探索这些示例，并将它们作为您自己的边缘函数的起点！
+欢迎探索这些示例,并将它们作为您自己的边缘函数的起点!
 
-更多示例，请参见[示例](https://edgeone.ai/developer/examples)。
+更多示例,请参见[示例](https://edgeone.ai/developer/examples)。
 
 ## 文档
 
