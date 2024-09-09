@@ -1,9 +1,10 @@
-# URL 认证
-
 <div align="left">
-  <a title="English" href="README.md">English</a>
+  语言:
+  <a title="英文" href="README.md">English</a>
   <a title="中文" href="README.zh-CN.md">中文</a>
 </div>
+
+# URL 认证
 
 <a href="https://edgeone.ai/products/function" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">开始使用</a>
 

@@ -1,9 +1,10 @@
-# A/B 测试 
-
 <div align="left">
-  <a title="English" href="README.md">English</a>
+  语言:
+  <a title="英文" href="README.md">English</a>
   <a title="中文" href="README.zh-CN.md">中文</a>
 </div>
+
+# A/B 测试 
 
 <a href="https://edgeone.ai/developer/examples/hub-performingana-btest" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 

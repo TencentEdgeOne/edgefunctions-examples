@@ -1,9 +1,10 @@
-# Geolocation-based Blocking
-
 <div align="left">
+  Language:
   <a title="English" href="README.md">English</a>
   <a title="中文" href="README.zh-CN.md">中文</a>
 </div>
+
+# Geolocation-based Blocking
 
 <a href="https://edgeone.ai/products/function" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Get Started</a>
 
