@@ -1,5 +1,10 @@
 # A/B 测试 
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/hub-performingana-btest" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
 本示例演示了如何使用 Edge Function 执行 A/B 测试，通过使用 cookie 存储会话信息并向用户提供不同版本的内容。

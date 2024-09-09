@@ -1,5 +1,10 @@
 # URL 认证
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/products/function" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">开始使用</a>
 
 本示例演示了如何使用 Edge Function 实现 URL 认证。它使用时间戳和 MD5 哈希来创建和验证安全的 URL,保护资源免受未经授权的访问,并防止 URL 被篡改。

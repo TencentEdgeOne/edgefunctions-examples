@@ -1,5 +1,10 @@
 # 防止数据篡改
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/protecting-data-from-tampering" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
 本示例演示了如何使用 Edge Function 来验证响应内容的完整性,防止数据在传输过程中被篡改。在这个示例中,我们为请求体计算 SHA-256 签名,并将其与源服务器生成的签名进行比较。如果签名相同,则表示响应内容未被篡改;否则,返回 416 状态码,表示响应内容已被篡改。这种技术通过比较实时计算的签名与源服务器提供的签名来确保数据的安全性。

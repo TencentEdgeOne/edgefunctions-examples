@@ -1,5 +1,10 @@
 # 批量重定向
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/products/function" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">开始使用</a>
 
 本示例演示了如何使用 Edge Function 实现批量重定向。这种技术允许您高效地管理大量 URL 重定向,适用于网站重构、域名迁移或 URL 结构变更等场景。

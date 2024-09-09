@@ -1,5 +1,10 @@
 # Post JSON
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/hub-returningjson" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
 
 This example demonstrates how to use an Edge Function to generate and return a JSON object. This technique is commonly used for creating lightweight APIs or returning structured data to clients.

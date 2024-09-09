@@ -1,7 +1,11 @@
 # URL Authentication
 
-<a href="https://edgeone.ai/products/function" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Get Started</a>
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
 
+<a href="https://edgeone.ai/products/function" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Get Started</a>
 
 This example demonstrates how to implement URL authentication using Edge Functions. It uses a timestamp and MD5 hash to create and verify secure URLs, protecting resources from unauthorized access and preventing URL manipulation.
 

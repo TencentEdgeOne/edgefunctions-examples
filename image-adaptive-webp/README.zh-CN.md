@@ -1,5 +1,10 @@
 # 自适应 WebP 图像
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/hub-imageadaptivewebP" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
 本示例演示了如何使用 Edge Functions 动态地向支持 WebP 格式的浏览器提供 WebP 图像,同时为不支持 WebP 的浏览器提供原始图像格式。这种方法可以显著减少图像文件大小并提高页面加载速度。若您的 Web 应用展示了大量的 PNG，JPEG 格式图片，期望在边缘自动优化图片，减少流量带宽成本，可使用边缘函数实现平滑升级， 把 PNG，JPEG 格式图片自动转换为 WebP 格式，并且业务代码 0 改动。

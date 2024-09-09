@@ -1,5 +1,10 @@
 # M3U8 Rewrite Authentication
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/hub-rewritingam3u8fileandconfiguringauthentication" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
 
 This example demonstrates how to use an Edge Function to rewrite M3U8 files and configure authentication. This technique can protect streaming content from unauthorized access while ensuring secure content delivery.

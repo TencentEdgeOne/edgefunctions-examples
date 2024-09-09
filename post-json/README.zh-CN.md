@@ -1,5 +1,10 @@
 # 返回 JSON
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/hub-returningjson" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
 本示例演示了如何使用 Edge Function 生成并返回 JSON 对象。这种技术通常用于创建轻量级 API 或向客户端返回结构化数据。

@@ -1,5 +1,10 @@
 # 请求重定向
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/hub-requestredirct" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
 本示例演示了如何使用 Edge Function 实现请求重定向,向客户端返回 302 响应。这是一种常用的技术,用于 URL 缩短、维护旧 URL 的向后兼容性,或临时移动内容。

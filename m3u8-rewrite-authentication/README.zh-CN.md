@@ -1,5 +1,10 @@
 # M3U8 文件重写和认证配置
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/hub-rewritingam3u8fileandconfiguringauthentication" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
 本示例演示了如何使用 Edge Function 重写 M3U8 文件并配置认证。这种技术可以保护流媒体内容,防止未经授权的访问,同时确保内容的安全传输。

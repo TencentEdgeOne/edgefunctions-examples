@@ -1,5 +1,10 @@
 # 缓存 POST 请求
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/caching-post-requests" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
 在本示例中,我们为 POST 请求的请求体计算 SHA-256 签名,并将其用作缓存键的一部分,然后调用 Cache API 来缓存响应内容。如果内容已经存储在缓存中,则将缓存的内容发送给客户端。否则,调用 Fetch API 发起子请求以获取远程资源。本示例演示了如何使用 Edge Function 来缓存 POST 请求。

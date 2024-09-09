@@ -1,5 +1,10 @@
 # Image Adaptive WebP 
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/hub-imageadaptivewebP" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
 
 This example demonstrates how to use Edge Functions to dynamically serve WebP images to browsers that support this format, while falling back to original image formats for browsers that don't support WebP. This approach can significantly reduce image file sizes and improve page load times. If your web application displays a large number of PNG and JPEG format images and you want to automatically optimize images at the edge to reduce bandwidth costs, you can use edge functions to implement a smooth upgrade, automatically converting PNG and JPEG format images to WebP format with zero changes to your business code.

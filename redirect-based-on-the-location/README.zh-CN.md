@@ -1,5 +1,10 @@
 # 基于位置的重定向
 
+<div align="left">
+  <a title="English" href="README.md">English</a>
+  <a title="中文" href="README.zh-CN.md">中文</a>
+</div>
+
 <a href="https://edgeone.ai/developer/examples/redirect-based-on-the-location" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
 
 在此示例中,Edge Function 用于通过识别客户端的区域自动将客户端重定向到与其区域相对应的目标 URL。
