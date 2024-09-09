@@ -21,11 +21,11 @@
 
 如果引用不正确，访问将被拒绝。
 
-![referer-hotlink-protection-denied Preview](../readme-images/referer-hotlink-protection-denied.avif)
+![referer-hotlink-protection-denied Preview](../assets/images/referer-hotlink-protection-denied.avif)
 
 如果引用正确，则授予访问权限。
 
-![referer-hotlink-protection-granted Preview](../readme-images/referer-hotlink-protection-granted.avif)
+![referer-hotlink-protection-granted Preview](../assets/images/referer-hotlink-protection-granted.avif)
 
 ## 使用场景
 
