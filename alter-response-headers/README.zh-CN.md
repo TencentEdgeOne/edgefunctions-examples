@@ -6,7 +6,7 @@
 
 # 修改响应头
 
-<div style="display: flex; gap: 10px;">
+<div style="display: flex; gap: justify-content: space-between; align-items: center;">
   <a href="https://edgeone.ai/developer/examples/hub-modifyingaresponseheader" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">查看在线示例</a>
   <a href="https://playground.edgeone.ai/?t=6926de7fbec4c1b59e717388b0afda39" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">在 Playground 中尝试</a>
 <div>
