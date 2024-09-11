@@ -10,6 +10,10 @@
 
 在本示例中,Edge Function 获取并合并多个资源,然后以流式方式将合并后的数据提供给客户端。这演示了如何使用 Edge Functions 从多个源聚合数据,并以流式方式高效地传递数据。
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=95ea065c8aa2bd10eecc43c5464e9130" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">在 Playground 中尝试</a>
+</div>
+
 ## 工作原理
 
 1. 定义一个包含要获取的资源 URL 的数组。

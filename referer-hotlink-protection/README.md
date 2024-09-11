@@ -10,6 +10,10 @@
 
 This example demonstrates how to use an Edge Function to implement referer-based hotlink protection. This technique helps protect your website's resources from unauthorized use by other websites.
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=cf0b43b26b77e4475b46bb462617e510" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Try in Playground</a>
+</div>
+
 ## How It Works
 
 1. Create a `handleRequest` function that:

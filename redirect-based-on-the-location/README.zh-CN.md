@@ -10,6 +10,10 @@
 
 在此示例中,Edge Function 用于通过识别客户端的区域自动将客户端重定向到与其区域相对应的目标 URL。
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=ffac235709b9a2dd8e71c7af56f4441f" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">在 Playground 中尝试</a>
+</div>
+
 ## 工作原理
 
 1. 定义一个包含不同区域对应 URL 的对象 `URLS`。

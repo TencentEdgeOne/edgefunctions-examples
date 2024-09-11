@@ -10,6 +10,10 @@
 
 In this example, an Edge Function fetches and merges multiple resources, then serves the combined stream to a client. This demonstrates how to use Edge Functions to aggregate data from multiple sources and deliver it efficiently in a streaming fashion.
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=95ea065c8aa2bd10eecc43c5464e9130" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Try in Playground</a>
+</div>
+
 ## How It Works
 
 1. Define an array of resource URLs to be fetched.

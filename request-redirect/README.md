@@ -10,6 +10,10 @@
 
 This example demonstrates how to use an Edge Function to implement request redirection, returning a 302 response to the client. This is a common technique used for URL shortening, maintaining backwards compatibility with old URLs, or temporarily moving content.
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=90ccb91e660530d484e1bae2478bc7f7" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Try in Playground</a>
+</div>
+
 ## How It Works
 
 1. Define a constant `REDIRECT_URL` with the target URL for redirection.

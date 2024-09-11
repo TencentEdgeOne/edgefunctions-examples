@@ -10,6 +10,10 @@
 
 This example demonstrates how to use an Edge Function to obtain and return client geo-location data. This information can be valuable for various purposes such as content localization, analytics, or security measures.
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=a1530fc5f1eb8d44e6a8684ab4ae2d5c" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Try in Playground</a>
+</div>
+
 ## Available Geolocation Properties (GeoProperties)
 
 The Edge Function can access the following properties describing the client request's location information:

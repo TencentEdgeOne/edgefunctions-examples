@@ -10,6 +10,10 @@
 
 本示例演示了如何使用 Edge Function 实现基于 Referer 的防盗链保护。这种技术有助于保护您网站的资源不被其他网站未经授权使用。
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=cf0b43b26b77e4475b46bb462617e510" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">在 Playground 中尝试</a>
+</div>
+
 ## 工作原理
 
 1. 创建一个 `handleRequest` 函数，该函数：

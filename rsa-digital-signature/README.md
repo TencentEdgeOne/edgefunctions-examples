@@ -10,6 +10,10 @@
 
 This example demonstrates how to implement RSA digital signature verification using an Edge Function. This technique ensures the integrity and authenticity of data, preventing tampering during transmission.
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=20acef098d6cee53a8b2dfa5cefdf4bc" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Try in Playground</a>
+</div>
+
 ## How It Works
 
 1. Define constants for public and private keys.

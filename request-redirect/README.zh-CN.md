@@ -10,6 +10,10 @@
 
 本示例演示了如何使用 Edge Function 实现请求重定向,向客户端返回 302 响应。这是一种常用的技术,用于 URL 缩短、维护旧 URL 的向后兼容性,或临时移动内容。
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=90ccb91e660530d484e1bae2478bc7f7" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">在 Playground 中尝试</a>
+</div>
+
 ## 工作原理
 
 1. 定义一个常量 `REDIRECT_URL`,包含重定向的目标 URL。

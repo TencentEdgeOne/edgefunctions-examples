@@ -10,6 +10,10 @@
 
 In this example, an Edge Function is used to automatically redirect the client to the target URL corresponding to their region by identifying the client's region.
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=ffac235709b9a2dd8e71c7af56f4441f" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Try in Playground</a>
+</div>
+
 ## How It Works
 
 1. Define an object `URLS` containing URLs for different regions.

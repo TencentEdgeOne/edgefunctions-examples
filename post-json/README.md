@@ -10,6 +10,10 @@
 
 This example demonstrates how to use an Edge Function to generate and return a JSON object. This technique is commonly used for creating lightweight APIs or returning structured data to clients.
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=e6767a021b50f1a54bf2858acb16eb07" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Try in Playground</a>
+</div>
+
 ## How It Works
 
 1. Define a constant `JSON_DATA` containing the JSON object to be returned.

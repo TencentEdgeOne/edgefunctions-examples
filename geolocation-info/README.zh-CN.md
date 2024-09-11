@@ -10,6 +10,10 @@
 
 本示例演示了如何使用 Edge Function 获取并返回客户端的地理位置数据。这些信息对于内容本地化、分析或安全措施等多种用途都非常有价值。
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=a1530fc5f1eb8d44e6a8684ab4ae2d5c" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">在 Playground 中尝试</a>
+</div>
+
 ## 可获取的地理位置属性 (GeoProperties)
 
 Edge Function 可以获取以下描述客户请求位置信息的属性：

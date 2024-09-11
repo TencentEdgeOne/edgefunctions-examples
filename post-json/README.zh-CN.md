@@ -10,6 +10,10 @@
 
 本示例演示了如何使用 Edge Function 生成并返回 JSON 对象。这种技术通常用于创建轻量级 API 或向客户端返回结构化数据。
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=e6767a021b50f1a54bf2858acb16eb07" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">在 Playground 中尝试</a>
+</div>
+
 ## 工作原理
 
 1. 定义一个常量 `JSON_DATA`，包含要返回的 JSON 对象。

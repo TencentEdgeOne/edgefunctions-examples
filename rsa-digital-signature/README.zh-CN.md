@@ -10,6 +10,10 @@
 
 本示例演示了如何使用 Edge Function 实现 RSA 数字签名验证。这种技术可以确保数据的完整性和真实性,防止数据在传输过程中被篡改。
 
+<div align="left">
+  <a href="https://playground.edgeone.ai/?t=20acef098d6cee53a8b2dfa5cefdf4bc" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">在 Playground 中尝试</a>
+</div>
+
 ## 工作原理
 
 1. 定义公钥和私钥常量。
