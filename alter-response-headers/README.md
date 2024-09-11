@@ -6,8 +6,11 @@
 
 # Alter Response Headers
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div align="left">
   <a href="https://edgeone.ai/developer/examples/hub-modifyingaresponseheader" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
+</div>
+
+<div align="right">
   <a href="https://playground.edgeone.ai/?t=6926de7fbec4c1b59e717388b0afda39" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Try in Playground</a>
 </div>
 
