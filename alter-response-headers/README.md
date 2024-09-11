@@ -10,11 +10,11 @@
   <a href="https://edgeone.ai/developer/examples/hub-modifyingaresponseheader" style="display: inline-block; background-color: #0366d6; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">View Online Example</a>
 </div>
 
-<div align="right">
+This example demonstrates how to use an Edge Function to add, delete, or modify response headers. This technique allows you to customize the HTTP headers sent back to clients, which can be useful for various purposes such as security enhancement, caching control, or adding custom information.
+
+<div align="left">
   <a href="https://playground.edgeone.ai/?t=6926de7fbec4c1b59e717388b0afda39" style="display: inline-block; background-color: #28a745; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: bold;">Try in Playground</a>
 </div>
-
-This example demonstrates how to use an Edge Function to add, delete, or modify response headers. This technique allows you to customize the HTTP headers sent back to clients, which can be useful for various purposes such as security enhancement, caching control, or adding custom information.
 
 ## How It Works
 
