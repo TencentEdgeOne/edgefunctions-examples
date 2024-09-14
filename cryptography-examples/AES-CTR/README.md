@@ -4,36 +4,47 @@
   <a title="English" href="README.md">English</a>
 </div>
 
-# AES-CBC Encryption Example
+# AES-CTR Encryption Example
 
-This example demonstrates how to use the AES-CBC encryption algorithm to encrypt and decrypt data. AES (Advanced Encryption Standard) is a symmetric encryption algorithm widely used to secure data.
+This example demonstrates how to use the AES-CTR encryption algorithm to encrypt and decrypt data. AES (Advanced Encryption Standard) is a symmetric encryption algorithm widely used to secure data.
 
-## What is AES-CBC?
+## What is AES-CTR?
 
-CBC (Cipher Block Chaining) is a mode of AES that enhances security by XORing each plaintext block with the previous ciphertext block. The AES-CBC mode uses an initialization vector (IV) to ensure that the same plaintext produces different ciphertexts in different encryption processes.
+AES (Advanced Encryption Standard) is a symmetric encryption algorithm widely used to secure data. CTR (Counter) is a mode of AES that combines a counter with a key stream to encrypt data. The AES-CTR mode allows for parallel processing, speeding up both encryption and decryption.
 
-### Use Cases
+### How CTR Works
 
-AES-CBC mode is suitable for the following scenarios:
+1. **Counter**: The CTR mode uses a counter as input, which increments with each encryption. The initial value of the counter is typically combined with a randomly generated initialization vector (IV).
+2. **Encryption Process**:
+   - The counter value is encrypted to generate a key stream.
+   - The key stream is XORed with the plaintext to produce the ciphertext.
+3. **Decryption Process**: During decryption, the same counter and key stream are used to XOR with the ciphertext to recover the plaintext.
 
-- Suitable for scenarios that require sequential processing of data blocks.
-- Protecting sensitive data in transit, such as user information and payment details.
-- Implementing secure API communication to ensure confidentiality and integrity of data.
-- Storing encrypted data to prevent unauthorized access.
+## How It Works
 
-### Considerations
-
-- Each block depends on the previous block, which can lead to performance bottlenecks as encryption and decryption cannot be parallelized.
-- The security of the IV is crucial; reusing the IV can lead to security vulnerabilities.
+1. Generate a 256-bit AES key.
+2. Encrypt the data using a randomly generated initialization vector (IV) and counter.
+3. Return the encrypted data along with the IV.
+4. Decrypt the data using the same key and IV to verify the correctness of encryption and decryption.
 
 ## Sample Preview
 
-![AES-CBC Example Preview](../../assets/images/aes-cbc-preview.avif)
+![AES-CTR Example Preview](../../assets/images/aes-ctr-preview.avif)
+
+## Use Cases
+
+This technique is particularly useful in the following scenarios:
+
+- Applications requiring fast encryption and decryption, such as real-time data transmission.
+- Scenarios that handle large volumes of data, as it supports parallel processing.
+- Protecting sensitive data in transit, such as user information and payment details.
+- Meeting high-performance encryption needs suitable for large-scale data processing.
 
 ## Considerations
 
-- Ensure the security of the key to prevent leakage.
-- Use a strong random number generator to generate the IV.
-- Regularly update the key to enhance security.
+- **Uniqueness of the Counter**: Each encryption must use a unique counter value; reusing the counter can lead to security vulnerabilities.
+- **Security of the IV**: The initialization vector (IV) should be randomly generated and kept secure to avoid being predicted by attackers.
+- **Parallel Processing**: While the CTR mode supports parallel processing, it is essential to manage the counter correctly during implementation.
+- **Data Integrity**: AES-CTR does not provide data integrity verification by itself; it is recommended to combine it with other mechanisms (such as HMAC) to ensure data has not been tampered with.
 
-By implementing AES-CBC encryption at the edge, you can effectively secure data and prevent it from being tampered with or stolen during transmission.
+By implementing AES-CTR encryption at the edge, you can effectively secure data and prevent it from being tampered with or stolen during transmission.
