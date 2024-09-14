@@ -8,6 +8,10 @@
 
 This example demonstrates how to use the AES-CBC encryption algorithm to encrypt and decrypt data. AES (Advanced Encryption Standard) is a symmetric encryption algorithm widely used to secure data.
 
+## What is AES-CBC?
+
+AES (Advanced Encryption Standard) is a symmetric encryption algorithm widely used to secure data. CBC (Cipher Block Chaining) is a mode of AES that enhances security by XORing each plaintext block with the previous ciphertext block. The AES-CBC mode uses an initialization vector (IV) to ensure that the same plaintext produces different ciphertexts in different encryption processes.
+
 ## How It Works
 
 1. Generate a 256-bit AES key.

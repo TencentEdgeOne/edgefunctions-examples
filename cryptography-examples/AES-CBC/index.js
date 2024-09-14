@@ -37,7 +37,7 @@ async function handleRequest(request) {
   );
 }
 
-// 生成密钥
+// Generate a random 256-bit AES key
 async function generateKey() {
   return await crypto.subtle.generateKey(
     { name: 'AES-CBC', length: 256 },
@@ -46,7 +46,7 @@ async function generateKey() {
   );
 }
 
-// 加密函数
+// Encrypt the data
 async function encryptData(data, key) {
   const encoder = new TextEncoder();
   const encodedData = encoder.encode(data);
@@ -64,7 +64,7 @@ async function encryptData(data, key) {
   };
 }
 
-// 解密函数
+// Decrypt the data
 async function decryptData(encryptedObj, key) {
   const iv = new Uint8Array(encryptedObj.iv);
   const decryptedData = await crypto.subtle.decrypt(
