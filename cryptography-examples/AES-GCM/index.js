@@ -45,7 +45,7 @@ async function handleRequest(request) {
   );
 }
 
-// 生成一个随机的 256 位 AES 密钥
+// Generate a random 256-bit AES key
 async function generateKey() {
   return await crypto.subtle.generateKey(
     { name: 'AES-GCM', length: 256 },
@@ -54,21 +54,21 @@ async function generateKey() {
   );
 }
 
-// 加密数据
+// Encrypt data
 async function encryptData(data, key) {
   const encoder = new TextEncoder();
   const encodedData = encoder.encode(data);
 
-  const iv = crypto.getRandomValues(new Uint8Array(12)); // 生成随机 IV
+  const iv = crypto.getRandomValues(new Uint8Array(12)); // Generate a random IV
   const encryptedBuffer = await crypto.subtle.encrypt(
-    { name: 'AES-GCM', iv: iv, tagLength: 128 }, // 使用 AES-GCM 并指定标签长度
+    { name: 'AES-GCM', iv: iv, tagLength: 128 }, // Use AES-GCM and specify tag length
     key,
     encodedData
   );
 
   const encryptedBytes = new Uint8Array(encryptedBuffer);
-  const ciphertext = encryptedBytes.slice(0, encryptedBytes.length - 16); // 除去最后 16 字节的认证标签
-  const tag = encryptedBytes.slice(encryptedBytes.length - 16); // 认证标签
+  const ciphertext = encryptedBytes.slice(0, encryptedBytes.length - 16); // Exclude the last 16 bytes of the authentication tag
+  const tag = encryptedBytes.slice(encryptedBytes.length - 16); // Authentication tag
 
   return {
     iv: Array.from(iv),
@@ -77,13 +77,13 @@ async function encryptData(data, key) {
   };
 }
 
-// 解密数据
+// Decrypt data
 async function decryptData(encryptedObj, key) {
   const iv = new Uint8Array(encryptedObj.iv);
   const ciphertext = new Uint8Array(encryptedObj.ciphertext);
   const tag = new Uint8Array(encryptedObj.tag);
 
-  // 将密文和标签组合在一起
+  // Combine ciphertext and tag
   const encryptedData = new Uint8Array(ciphertext.length + tag.length);
   encryptedData.set(ciphertext, 0);
   encryptedData.set(tag, ciphertext.length);
@@ -92,13 +92,13 @@ async function decryptData(encryptedObj, key) {
     const decryptedBuffer = await crypto.subtle.decrypt(
       { name: 'AES-GCM', iv: iv },
       key,
-      encryptedData // 包含密文和认证标签
+      encryptedData // Includes ciphertext and authentication tag
     );
 
     const decoder = new TextDecoder();
     return decoder.decode(decryptedBuffer);
   } catch (error) {
-    // 如果认证失败，会抛出错误
-    return '认证失败，数据可能已被篡改。';
+    // If authentication fails, an error is thrown
+    return 'Authentication failed. The data may have been tampered with.';
   }
 }
