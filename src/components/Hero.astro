@@ -1,0 +1,33 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = 'EdgeOne Function Examples',
+  subtitle = 'Explore production-ready edge functions — from authentication and cryptography to streaming and traffic control.',
+} = Astro.props;
+---
+
+<section class="relative w-full h-[500px] overflow-hidden pt-[80px] bg-[#000b2b] flex items-center justify-center">
+  {/* Background Grid Layer */}
+  <div
+    class="absolute inset-0 z-0 pointer-events-none"
+    style="background-image: url('https://www.vandelaydesign.com/wp-content/themes/vandelaydesign/assets/img/blocks/homepage/homepage-hero/isolation-mode-bg.png'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; transform: scale(1.1);"
+  />
+
+  {/* Content Container */}
+  <div class="relative z-10 mx-auto px-[24px] max-w-[1472px] w-full">
+    <div class="flex flex-col items-center text-center mb-[80px]">
+      <h1 class="text-white font-bold text-[40px] md:text-[80px] leading-[1.1] md:leading-[108px] tracking-[2.4px] mb-[16px] uppercase"
+          style="font-family: 'Orbitron', sans-serif;">
+        {title}
+      </h1>
+      <p class="text-white font-normal text-[18px] md:text-[32px] leading-[1.5] md:leading-[48px] max-w-[1424px]"
+         style="font-family: 'Geist', sans-serif;">
+        {subtitle}
+      </p>
+    </div>
+  </div>
+</section>

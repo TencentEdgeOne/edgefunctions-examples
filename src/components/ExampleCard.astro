@@ -1,0 +1,73 @@
+---
+import type { Example, Category } from '../types/manifest';
+
+interface Props {
+  example: Example;
+  category: Category;
+  previewImage?: string;
+}
+
+const { example, category, previewImage } = Astro.props;
+const categoryColorVar = `var(--color-${category.color})`;
+---
+
+<div
+  class="example-card group relative bg-bg-card rounded-card p-5 border border-bg-stroke
+         hover:border-accent-gold/30 transition-all duration-200 w-full"
+  data-category={example.category}
+>
+  {/* Clickable overlay */}
+  <a
+    href={`/examples/${example.slug}`}
+    class="absolute inset-0 z-10 rounded-card outline-none
+           focus-visible:outline-2 focus-visible:outline-accent-gold focus-visible:outline-offset-2"
+  >
+    <span class="sr-only">{example.title}</span>
+  </a>
+
+  {/* Eyebrow Header */}
+  <div class="flex items-center gap-3 mb-4">
+    <div
+      class="w-[8px] h-[8px] rounded-full shrink-0"
+      style={`background-color: ${categoryColorVar}`}
+    />
+    <span class="font-mono text-[13px] leading-[20px] tracking-[-0.3px] text-text-headline">
+      {example.title}
+    </span>
+    <span class="text-text-muted text-[11px] font-mono ml-auto">
+      {category.label}
+    </span>
+  </div>
+
+  {/* Preview Image */}
+  {previewImage && (
+    <div class="relative w-full aspect-[3/2] overflow-hidden rounded-[8px] bg-bg-code mb-4">
+      <img
+        src={previewImage}
+        alt={`Preview of ${example.title}`}
+        class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+        loading="lazy"
+      />
+    </div>
+  )}
+
+  {/* Description */}
+  <p class="text-[15px] leading-[24px] text-text-body mb-3">
+    {example.summary}
+  </p>
+
+  {/* Tags */}
+  <div class="flex flex-wrap gap-2">
+    {example.tags.map((tag) => (
+      <span class="text-[11px] font-mono px-2 py-1 rounded-tag bg-bg-code text-text-muted border border-bg-stroke">
+        {tag}
+      </span>
+    ))}
+  </div>
+
+  {/* Bottom accent line */}
+  <div
+    class="w-full h-[2px] rounded-full mt-4 opacity-40 group-hover:opacity-100 transition-opacity duration-200"
+    style={`background-color: ${categoryColorVar}`}
+  />
+</div>

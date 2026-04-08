@@ -1,0 +1,37 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  disabled?: boolean;
+}
+
+const { href, label, disabled = false } = Astro.props;
+
+const baseClasses =
+  'block md:inline-block w-full md:w-auto text-center rounded-btn px-6 py-3 font-medium transition-colors duration-150';
+
+const enabledClasses =
+  'bg-accent-gold text-white hover:bg-accent-gold-hover focus-visible:outline-2 focus-visible:outline-accent-gold focus-visible:outline-offset-2';
+
+const disabledClasses =
+  'bg-[#E0E0E0] text-[#8A8A8A] cursor-not-allowed';
+---
+
+{disabled ? (
+  <span
+    class:list={[baseClasses, disabledClasses]}
+    aria-disabled="true"
+    role="link"
+  >
+    {label}
+  </span>
+) : (
+  <a
+    href={href}
+    class:list={[baseClasses, enabledClasses]}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {label}
+  </a>
+)}

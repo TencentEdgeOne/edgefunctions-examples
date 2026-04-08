@@ -1,0 +1,175 @@
+---
+interface Tab {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  tabs: Tab[];
+  activeTab?: string;
+}
+
+const { tabs, activeTab = tabs[0]?.id } = Astro.props;
+---
+
+<div class="mt-8">
+  <!-- Tab bar -->
+  <div role="tablist" aria-label="Example details" class="flex gap-0 border-b border-bg-stroke">
+    {tabs.map((tab) => {
+      const isActive = tab.id === activeTab;
+      return (
+        <button
+          role="tab"
+          id={`tab-${tab.id}`}
+          aria-selected={isActive ? 'true' : 'false'}
+          aria-controls={`panel-${tab.id}`}
+          tabindex={isActive ? 0 : -1}
+          data-tab-id={tab.id}
+          class:list={[
+            'px-4 py-3 text-sm font-medium transition-colors duration-150 cursor-pointer relative',
+            'focus-visible:outline-2 focus-visible:outline-accent-gold focus-visible:outline-offset-2',
+            isActive
+              ? 'text-accent-gold'
+              : 'text-text-muted hover:text-text-body',
+          ]}
+        >
+          {tab.label}
+          {isActive && (
+            <span class="absolute bottom-0 left-0 right-0 h-[2px] bg-accent-gold" />
+          )}
+        </button>
+      );
+    })}
+  </div>
+
+  <!-- Tab panels — static slot names required by Astro -->
+  <div
+    role="tabpanel"
+    id="panel-doc"
+    aria-labelledby="tab-doc"
+    hidden={activeTab !== 'doc'}
+    class="tab-panel mt-6"
+    style={activeTab === 'doc' ? 'opacity:1' : 'opacity:0'}
+  >
+    <slot name="doc" />
+  </div>
+
+  <div
+    role="tabpanel"
+    id="panel-code"
+    aria-labelledby="tab-code"
+    hidden={activeTab !== 'code'}
+    class="tab-panel mt-6"
+    style={activeTab === 'code' ? 'opacity:1' : 'opacity:0'}
+  >
+    <slot name="code" />
+  </div>
+
+  <div
+    role="tabpanel"
+    id="panel-live"
+    aria-labelledby="tab-live"
+    hidden={activeTab !== 'live'}
+    class="tab-panel mt-6"
+    style={activeTab === 'live' ? 'opacity:1' : 'opacity:0'}
+  >
+    <slot name="live" />
+  </div>
+</div>
+
+<script>
+  function initTabPanel() {
+    const tablist = document.querySelector('[role="tablist"][aria-label="Example details"]');
+    if (!tablist) return;
+
+    const tabs = Array.from(tablist.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+    const panelIds = tabs.map(t => `panel-${t.dataset.tabId}`);
+    const panels = panelIds.map(id => document.getElementById(id));
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function switchTab(tabId: string) {
+      tabs.forEach((t, i) => {
+        const isActive = t.dataset.tabId === tabId;
+        t.setAttribute('aria-selected', String(isActive));
+        t.tabIndex = isActive ? 0 : -1;
+
+        // Update active indicator
+        const indicator = t.querySelector('span');
+        if (isActive) {
+          t.classList.remove('text-text-muted', 'hover:text-text-body');
+          t.classList.add('text-accent-gold');
+          if (!indicator) {
+            const span = document.createElement('span');
+            span.className = 'absolute bottom-0 left-0 right-0 h-[2px] bg-accent-gold';
+            t.appendChild(span);
+          }
+        } else {
+          t.classList.remove('text-accent-gold');
+          t.classList.add('text-text-muted', 'hover:text-text-body');
+          if (indicator) indicator.remove();
+        }
+
+        // Update panel visibility
+        const panel = panels[i];
+        if (!panel) return;
+        if (isActive) {
+          panel.hidden = false;
+          if (reducedMotion) {
+            panel.style.opacity = '1';
+          } else {
+            panel.style.opacity = '0';
+            panel.style.transition = 'opacity 150ms ease';
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                panel.style.opacity = '1';
+              });
+            });
+          }
+        } else {
+          panel.hidden = true;
+          panel.style.opacity = '0';
+        }
+      });
+    }
+
+    // Click handler
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const tabId = tab.dataset.tabId;
+        if (tabId) switchTab(tabId);
+      });
+    });
+
+    // Keyboard navigation: ArrowLeft/ArrowRight
+    tabs.forEach(tab => {
+      tab.addEventListener('keydown', (e: KeyboardEvent) => {
+        const currentIndex = tabs.indexOf(tab);
+        let newIndex = -1;
+
+        if (e.key === 'ArrowRight') {
+          newIndex = (currentIndex + 1) % tabs.length;
+        } else if (e.key === 'ArrowLeft') {
+          newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        } else if (e.key === 'Home') {
+          newIndex = 0;
+        } else if (e.key === 'End') {
+          newIndex = tabs.length - 1;
+        }
+
+        if (newIndex >= 0) {
+          e.preventDefault();
+          const newTab = tabs[newIndex];
+          const newTabId = newTab.dataset.tabId;
+          if (newTabId) {
+            switchTab(newTabId);
+            newTab.focus();
+          }
+        }
+      });
+    });
+  }
+
+  initTabPanel();
+  document.addEventListener('astro:after-swap', initTabPanel);
+</script>

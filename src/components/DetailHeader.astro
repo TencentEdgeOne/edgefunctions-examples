@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  categoryLabel: string;
+  categoryColor: string;
+}
+
+const { title, categoryLabel, categoryColor } = Astro.props;
+---
+
+<div class="pt-8 lg:pt-12">
+  <a
+    href="/"
+    class="inline-flex items-center gap-1 text-text-body text-sm hover:text-accent-gold transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-accent-gold focus-visible:outline-offset-2"
+  >
+    ← Back
+  </a>
+
+  <h1 class="text-text-headline text-[28px] lg:text-[36px] font-bold leading-tight mt-6">
+    {title}
+  </h1>
+
+  <span
+    style={`border-color: var(--color-${categoryColor})`}
+    class="inline-block border-l-[3px] bg-bg-card text-text-body text-sm px-3 py-1 rounded-[var(--radius-code)] mt-3"
+  >
+    {categoryLabel}
+  </span>
+</div>

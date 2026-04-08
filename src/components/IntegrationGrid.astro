@@ -1,0 +1,280 @@
+---
+/**
+ * IntegrationGrid — tech stack showcase with hoverable grid tiles
+ * Logos animate inward (converge) when scrolled into view, scatter back out when leaving.
+ * Scatter direction is auto-calculated: each logo flies away from grid center.
+ */
+
+interface LogoItem {
+  src: string;
+  alt: string;
+  col: number;
+  row: number;
+  span?: number;
+  isFlip?: boolean;
+}
+
+// Grid center: col 6.5, row 4.5 (middle of 12×8)
+const CENTER_COL = 6.5;
+const CENTER_ROW = 4.5;
+const SCATTER_STRENGTH = 40; // px per grid-unit of distance from center
+
+function computeScatter(col: number, row: number, span?: number): { x: number; y: number } {
+  // For span=2 logos, use the center of the spanned area
+  const effectiveCol = span === 2 ? col + 0.5 : col;
+  const dx = effectiveCol - CENTER_COL;
+  const dy = row - CENTER_ROW;
+  // Normalize then scale — further logos fly further
+  const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+  const scale = SCATTER_STRENGTH * (0.6 + dist * 0.4);
+  return {
+    x: Math.round((dx / dist) * scale),
+    y: Math.round((dy / dist) * scale),
+  };
+}
+
+const RAW_LOGOS: LogoItem[] = [
+  // Decorative flipped (dimmed)
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524019660b8a1f5b0931_github.svg", alt: "Github", col: 6, row: 2, isFlip: true },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed52405b64309d6f361314_datadog.svg", alt: "Datadog", col: 7, row: 2, isFlip: true },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524019660b8a1f5b0931_github.svg", alt: "Github", col: 8, row: 2, isFlip: true },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524019660b8a1f5b0931_github.svg", alt: "Github", col: 3, row: 3, isFlip: true },
+
+  // Outer ring
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524080115bb772ae9b7e_prometheus.svg", alt: "Prometheus", col: 5, row: 2 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed5240684457772673ed3f_opentelemetry.svg", alt: "OpenTelemetry", col: 9, row: 2, span: 2 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed5240604dbf06577fc662_elastic.svg", alt: "Elastic", col: 1, row: 3, span: 2 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524019660b8a1f5b0931_github.svg", alt: "Github", col: 2, row: 4 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed5240e729846d3bcccc25_grafana.svg", alt: "Grafana", col: 12, row: 4 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524031b9f134e780889e_splunk.svg", alt: "Splunk", col: 11, row: 5, span: 2 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed52405b64309d6f361314_datadog.svg", alt: "Datadog", col: 2, row: 6 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed52405b64309d6f361317_new%20relic.svg", alt: "New Relic", col: 4, row: 7, span: 2 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed5240e40bae7ba9f4e850_jira.svg", alt: "Jira", col: 8, row: 7, span: 2 },
+
+  // Inner ring — near the title
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed5240e729846d3bcccc25_grafana.svg", alt: "Grafana", col: 4, row: 3 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524080115bb772ae9b7e_prometheus.svg", alt: "Prometheus", col: 10, row: 3 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed52405b64309d6f361314_datadog.svg", alt: "Datadog", col: 3, row: 5 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed5240e40bae7ba9f4e850_jira.svg", alt: "Jira", col: 11, row: 3 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed5240604dbf06577fc662_elastic.svg", alt: "Elastic", col: 10, row: 6, span: 2 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524031b9f134e780889e_splunk.svg", alt: "Splunk", col: 1, row: 5 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524019660b8a1f5b0931_github.svg", alt: "Github", col: 12, row: 6 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed5240684457772673ed3f_opentelemetry.svg", alt: "OpenTelemetry", col: 3, row: 7 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed52405b64309d6f361317_new%20relic.svg", alt: "New Relic", col: 10, row: 7, span: 2 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed524080115bb772ae9b7e_prometheus.svg", alt: "Prometheus", col: 1, row: 7 },
+  { src: "https://cdn.prod.website-files.com/66e7cf7e589ead8e06f45979/66ed5240e729846d3bcccc25_grafana.svg", alt: "Grafana", col: 12, row: 7 },
+];
+
+// Auto-compute scatter for every logo
+const LOGOS = RAW_LOGOS.map((logo) => {
+  const scatter = computeScatter(logo.col, logo.row, logo.span);
+  return { ...logo, scatterX: scatter.x, scatterY: scatter.y };
+});
+
+// 96 background grid cells (12 cols × 8 rows)
+const gridCells = Array.from({ length: 96 });
+const hiddenCells = new Set([24,25,26,27,28,29, 44,45,46,47,48,49]);
+---
+
+<section class="ig-section bg-[#000b2b] py-[80px] px-5 md:px-[108px] overflow-hidden" id="ig-section">
+  <div class="max-w-[1280px] mx-auto relative">
+    <div class="flex flex-col items-center justify-center relative min-h-[802px]">
+
+      {/* Background Grid */}
+      <div
+        class="ig-bg-grid grid grid-cols-12 gap-[14.43px] absolute pointer-events-none"
+        style="width: 1205.85px; height: 801.064px; mask-image: radial-gradient(circle, rgb(0, 11, 43), rgba(0, 0, 0, 0) 80%); -webkit-mask-image: radial-gradient(circle, rgb(0, 11, 43), rgba(0, 0, 0, 0) 80%);"
+      >
+        {gridCells.map((_, i) => (
+          <div
+            class:list={[
+              "ig-cell w-[87.26px] h-[87.26px] bg-[#001040] transition-colors duration-300 hover:bg-[#0a2a6e] pointer-events-auto cursor-default",
+              hiddenCells.has(i) ? "opacity-0" : "opacity-100",
+            ]}
+          />
+        ))}
+      </div>
+
+      {/* Center Content */}
+      <div class="relative z-10 text-center max-w-[624px] pointer-events-none">
+        <h2
+          class="text-[40px] md:text-[64px] font-bold leading-[1.1] tracking-[-1.92px] text-white mb-2 uppercase"
+          style="font-family: 'Orbitron', sans-serif;"
+        >
+          Your Tech Stack, <br />
+          <span class="text-[#4dc9f6]">Integrated Seamlessly</span>
+        </h2>
+      </div>
+
+      {/* Logos Layer */}
+      <div
+        class="ig-logos absolute inset-0 grid grid-cols-12 grid-rows-8 gap-[14.43px] pointer-events-none"
+        style="width: 1205.85px; height: 802.588px;"
+      >
+        {LOGOS.map((logo, idx) => {
+          const flipPrefix = logo.isFlip ? 'scaleX(-1) scaleY(-1) ' : '';
+          // Stagger: outer logos (further from center) start slightly later
+          const dist = Math.sqrt(
+            Math.pow((logo.span === 2 ? logo.col + 0.5 : logo.col) - CENTER_COL, 2) +
+            Math.pow(logo.row - CENTER_ROW, 2)
+          );
+          const delay = (dist * 0.03).toFixed(2);
+          return (
+            <div
+              class:list={[
+                "ig-logo group relative flex items-center justify-center pointer-events-auto",
+                `col-start-${logo.col}`,
+                `row-start-${logo.row}`,
+                logo.span === 2 && "col-span-2",
+                logo.isFlip && "scale-x-[-1] scale-y-[-1]",
+              ]}
+              data-scatter-x={logo.scatterX}
+              data-scatter-y={logo.scatterY}
+              style={`transform: ${flipPrefix}translate(${logo.scatterX}px, ${logo.scatterY}px); opacity: 0.3; filter: blur(4px);`}
+              data-delay={delay}
+            >
+              {/* Logo Background Tile */}
+              <div
+                class:list={[
+                  "absolute inset-0 bg-[#001040] transition-colors duration-300 group-hover:bg-[#0a2a6e]",
+                  !logo.isFlip && "shadow-[0_0_1px_1px_rgba(0,16,64,0.04),0_1px_1px_-0.5px_rgba(0,11,43,0.08),0_3px_3px_-1.5px_rgba(0,16,64,0.04),0_6px_6px_-3px_rgba(0,16,64,0.04),0_12px_12px_-6px_rgba(0,16,64,0.04)]",
+                ]}
+              />
+              {/* Logo Image */}
+              <div class="relative z-20 p-4 w-full h-full flex items-center justify-center">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  class:list={[
+                    "max-w-full max-h-full object-contain",
+                    logo.isFlip ? "opacity-30 grayscale" : "opacity-90",
+                  ]}
+                  loading="eager"
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  function initIntegrationGrid() {
+    const section = document.getElementById('ig-section');
+    if (!section) return;
+
+    const logos = section.querySelectorAll<HTMLDivElement>('.ig-logo');
+    if (!logos.length) return;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      logos.forEach((logo) => {
+        logo.style.transform = logo.classList.contains('scale-x-[-1]')
+          ? 'scaleX(-1) scaleY(-1) translate(0, 0)'
+          : 'translate(0, 0)';
+        logo.style.opacity = '1';
+      });
+      return;
+    }
+
+    // Gentle ease-out for converge; slightly faster ease-in for scatter
+    const CONVERGE_EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)';
+    const SCATTER_EASING  = 'cubic-bezier(0.55, 0, 1, 0.45)';
+
+    function applyState(inView: boolean) {
+      logos.forEach((logo) => {
+        const delay = logo.dataset.delay || '0';
+        const isFlip = logo.classList.contains('scale-x-[-1]');
+        const flipPrefix = isFlip ? 'scaleX(-1) scaleY(-1) ' : '';
+
+        // 1) Kill any running transition so we restart from the current computed position
+        logo.style.transition = 'none';
+        const cs = getComputedStyle(logo);
+        logo.style.transform = cs.transform;
+        logo.style.opacity = cs.opacity;
+        logo.style.filter = cs.filter;
+
+        // 2) In the next frame, set the new transition + target
+        requestAnimationFrame(() => {
+          if (inView) {
+            // Converge: slide to grid position, fully opaque, sharp
+            logo.style.transition = `transform 1.4s ${CONVERGE_EASING} ${delay}s, opacity 1s ease ${delay}s, filter 1.2s ease ${delay}s`;
+            logo.style.transform = flipPrefix + 'translate(0px, 0px)';
+            logo.style.opacity = '1';
+            logo.style.filter = 'blur(0px)';
+          } else {
+            // Scatter: drift outward, dim and blurry (but still visible)
+            const sx = logo.dataset.scatterX || '0';
+            const sy = logo.dataset.scatterY || '0';
+            logo.style.transition = `transform 1s ${SCATTER_EASING} ${delay}s, opacity 0.7s ease ${delay}s, filter 0.8s ease ${delay}s`;
+            logo.style.transform = flipPrefix + `translate(${sx}px, ${sy}px)`;
+            logo.style.opacity = '0.3';
+            logo.style.filter = 'blur(4px)';
+          }
+        });
+      });
+    }
+
+    let currentState: boolean | null = null;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Converge when at least 10% visible; scatter when fully gone
+          const shouldBeInView = entry.intersectionRatio > 0.08;
+          if (shouldBeInView !== currentState) {
+            currentState = shouldBeInView;
+            applyState(shouldBeInView);
+          }
+        });
+      },
+      {
+        // threshold 0 catches the exact moment it leaves/enters viewport
+        threshold: [0, 0.08, 0.15],
+      }
+    );
+
+    observer.observe(section);
+  }
+
+  initIntegrationGrid();
+  document.addEventListener('astro:after-swap', initIntegrationGrid);
+</script>
+
+<style>
+  .col-start-1 { grid-column-start: 1; }
+  .col-start-2 { grid-column-start: 2; }
+  .col-start-3 { grid-column-start: 3; }
+  .col-start-4 { grid-column-start: 4; }
+  .col-start-5 { grid-column-start: 5; }
+  .col-start-6 { grid-column-start: 6; }
+  .col-start-7 { grid-column-start: 7; }
+  .col-start-8 { grid-column-start: 8; }
+  .col-start-9 { grid-column-start: 9; }
+  .col-start-10 { grid-column-start: 10; }
+  .col-start-11 { grid-column-start: 11; }
+  .col-start-12 { grid-column-start: 12; }
+  .row-start-1 { grid-row-start: 1; }
+  .row-start-2 { grid-row-start: 2; }
+  .row-start-3 { grid-row-start: 3; }
+  .row-start-4 { grid-row-start: 4; }
+  .row-start-5 { grid-row-start: 5; }
+  .row-start-6 { grid-row-start: 6; }
+  .row-start-7 { grid-row-start: 7; }
+  .row-start-8 { grid-row-start: 8; }
+  .col-span-2 { grid-column: span 2 / span 2; }
+  .grid-rows-8 { grid-template-rows: repeat(8, minmax(0, 1fr)); }
+
+  .ig-section {
+    perspective: 1200px;
+  }
+
+  .ig-logos,
+  .ig-bg-grid {
+    transform: rotateX(2deg);
+    transform-style: preserve-3d;
+  }
+</style>

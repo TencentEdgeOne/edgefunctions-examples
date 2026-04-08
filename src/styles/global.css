@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ============================================
+   EdgeOne Function Examples — Design Tokens
+   Dark AI-Future Theme
+   Tailwind CSS v4 CSS-first configuration
+   ============================================ */
+
+/* Geist font */
+@font-face {
+  font-family: 'Geist';
+  src: url('https://cdn.jsdelivr.net/gh/vercel/geist-font@main/packages/next/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('https://cdn.jsdelivr.net/gh/vercel/geist-font@main/packages/next/dist/fonts/geist-sans/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --hero-bg: #000b2b;
+}
+
+@theme {
+  /* --- Dark base palette --- */
+  --color-bg: #000b2b;
+  --color-bg-card: #001040;
+  --color-bg-code: #00153a;
+  --color-bg-stroke: #1a2d5a;
+
+  /* --- Text hierarchy (light on dark) --- */
+  --color-text-headline: #ffffff;
+  --color-text-body: #b0c4e8;
+  --color-text-muted: #5a7baa;
+
+  /* --- Accents --- */
+  --color-accent-gold: #4dc9f6;
+  --color-accent-gold-hover: #2ab8ea;
+  --color-accent-red: #ff4c6a;
+
+  /* --- Border --- */
+  --color-border: #1a2d5a;
+
+  /* --- Category Accents --- */
+  --color-category-auth: #a78bfa;
+  --color-category-geo: #34d399;
+  --color-category-rewrite: #60a5fa;
+  --color-category-crypto: #f472b6;
+  --color-category-stream: #c084fc;
+  --color-category-security: #fb923c;
+  --color-category-cache: #facc15;
+  --color-category-traffic: #f87171;
+
+  /* --- Typography --- */
+  --font-sans: "Geist", "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-display: "Orbitron", sans-serif;
+
+  /* --- Spacing (8px base) --- */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+
+  /* --- Border Radius --- */
+  --radius-btn: 8px;
+  --radius-tag: 6px;
+  --radius-card: 12px;
+  --radius-code: 6px;
+
+  /* --- Elevation --- */
+  --shadow-subtle: 0 2px 12px rgba(0,0,0,0.3);
+  --shadow-medium: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* ============================================
+   Global Base Styles
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduced Motion: disable all animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   View Transition — page navigation
+   ============================================ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0ms;
+  }
+}
+
+/* ============================================
+   Scroll Progress Indicator
+   ============================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 2px;
+  background: var(--color-accent-gold);
+  transform-origin: top;
+  transform: scaleY(0);
+  height: 100vh;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+/* ============================================
+   Section Reveal Animation
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

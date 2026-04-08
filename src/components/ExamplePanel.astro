@@ -1,0 +1,75 @@
+---
+import { getCategoriesWithExamples, getExamplesByCategory } from '../data/index';
+import ExampleRow from './ExampleRow.astro';
+
+const categories = getCategoriesWithExamples();
+---
+
+<div>
+  {categories.map((category, index) => {
+    const examples = getExamplesByCategory(category.id);
+    const isFirst = index === 0;
+    return (
+      <div
+        role="tabpanel"
+        id={`panel-${category.id}`}
+        aria-labelledby={`pill-${category.id}`}
+        data-panel-category={category.id}
+        class:list={[
+          'transition-opacity duration-150',
+          !isFirst && 'hidden',
+        ]}
+        style={`opacity: ${isFirst ? '1' : '0'}`}
+      >
+        <div class="flex flex-col gap-1">
+          {examples.map((example) => (
+            <ExampleRow
+              title={example.title}
+              summary={example.summary}
+              slug={example.slug}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function switchPanel(categoryId: string) {
+    const allPanels = document.querySelectorAll<HTMLDivElement>('[data-panel-category]');
+    const target = document.querySelector<HTMLDivElement>(`[data-panel-category="${categoryId}"]`);
+    if (!target) return;
+
+    if (prefersReducedMotion) {
+      // Instant switch — no fade
+      allPanels.forEach((p) => {
+        p.classList.add('hidden');
+        p.style.opacity = '0';
+      });
+      target.classList.remove('hidden');
+      target.style.opacity = '1';
+      return;
+    }
+
+    // Fade out visible panel
+    allPanels.forEach((p) => {
+      p.style.opacity = '0';
+    });
+
+    // After fade-out, swap visibility
+    setTimeout(() => {
+      allPanels.forEach((p) => p.classList.add('hidden'));
+      target.classList.remove('hidden');
+      // Force reflow before fade-in
+      void target.offsetHeight;
+      target.style.opacity = '1';
+    }, 150);
+  }
+
+  document.addEventListener('category-change', ((e: CustomEvent) => {
+    switchPanel(e.detail.categoryId);
+  }) as EventListener);
+</script>

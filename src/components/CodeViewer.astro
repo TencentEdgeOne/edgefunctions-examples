@@ -1,0 +1,55 @@
+---
+interface Props {
+  code: string; // Shiki-highlighted HTML string
+}
+
+const { code } = Astro.props;
+---
+
+<div class="code-viewer" role="code" aria-label="Source code">
+  <Fragment set:html={code} />
+</div>
+
+<style>
+  .code-viewer {
+    background: var(--color-bg-code);
+    border-radius: var(--radius-code);
+    padding: 20px;
+    overflow-x: auto;
+  }
+
+  /* Shiki output: <pre class="shiki"><code><span class="line">...</span></code></pre> */
+  .code-viewer :global(pre) {
+    margin: 0;
+    background: transparent !important;
+    padding: 0;
+  }
+
+  .code-viewer :global(code) {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.7;
+    counter-reset: line;
+    display: block;
+  }
+
+  /* Line numbers via CSS counter */
+  .code-viewer :global(.line)::before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 2em;
+    margin-right: 1em;
+    text-align: right;
+    color: var(--color-text-muted);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Responsive: smaller font on mobile */
+  @media (max-width: 767px) {
+    .code-viewer :global(code) {
+      font-size: 13px;
+    }
+  }
+</style>

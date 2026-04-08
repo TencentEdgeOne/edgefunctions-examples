@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Astro build output
+dist/
+.astro/
+.edgeone/
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store

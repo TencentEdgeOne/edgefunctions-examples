@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  summary: string;
+  slug: string;
+}
+
+const { title, summary, slug } = Astro.props;
+---
+
+<a
+  href={`/examples/${slug}`}
+  class="flex items-center justify-between py-3 px-4 min-h-[56px] rounded-card
+         transition-colors duration-150 hover:bg-[#F5F5F0] group
+         focus-visible:outline-2 focus-visible:outline-accent-gold focus-visible:outline-offset-2"
+>
+  <div>
+    <div class="text-text-headline text-[15px] font-medium">{title}</div>
+    <div class="text-text-muted text-[13px] mt-0.5">{summary}</div>
+  </div>
+  <span class="text-text-muted group-hover:text-accent-gold transition-colors shrink-0 ml-4">→</span>
+</a>
